@@ -82,7 +82,7 @@ jobs:
 workflows:
   myworkflows:
     jobs:
-      #- myjob1
+      - myjob1
       - create_infrastructure
       #- configure_infrastructure
       - smoke_test1
