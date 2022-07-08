@@ -74,7 +74,7 @@ jobs:
       - run:
          name: Test job
          # Fail the job intentionally to simulate an error.
-         command:  return 1
+         command:  return 0
       - destroy_environment
 
 # Invoke jobs via workflows
@@ -82,7 +82,7 @@ jobs:
 workflows:
   myworkflows:
     jobs:
-      - myjob1
+      #- myjob1
       - create_infrastructure
       #- configure_infrastructure
       - smoke_test1
