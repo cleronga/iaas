@@ -37,13 +37,24 @@ jobs:
             aws cloudformation deploy \
               --template-file template.yml \
               --stack-name myStack1 \
-              --region us-east-1  
+              --region us-east-1            
           
-          command: 
-            when: on-fail
+          when: on-fail
               aws cloudformation delete-stack --stack-name myStack1 --region us-east-1
 
-      
+  create_cloudfront:
+    docker:
+      - image: amazon/aws-cli
+    steps: 
+      - checkout
+      - run:
+          name: create cloud formation stack
+          command: |
+            aws cloudformation deploy \
+              --template-file cloudfront.yml \
+              --stack-name production-distro \
+              --parameter-overrides PipelineID="${ubacket64}" \  # Name of the S3 bucket you created manually.
+              --tags project=udapeople &  
         
      
   # Exercise: Config and Deployment
@@ -97,9 +108,10 @@ workflows:
       #- myjob1
       #- create_infrastructure
       #- configure_infrastructure
-      - create_infrastructure
+      #- create_infrastructure
       #- smoke_test1
       #- smoke_test1:
       #    requires: 
       #       - create_infrastructure
+      - create_cloudfront
 
