@@ -38,8 +38,9 @@ jobs:
               --template-file template.yml \
               --stack-name myStack1 \
               --region us-east-1  
-          - when: on-fail
-          command: |
+          
+          command: 
+            when: on-fail
               aws cloudformation delete-stack --stack-name myStack1 --region us-east-1
 
       
