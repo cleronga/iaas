@@ -37,10 +37,8 @@ jobs:
             aws cloudformation deploy \
               --template-file template.yml \
               --stack-name myStack1 \
-              --region us-east-1            
-          
-          when: on-fail
-              aws cloudformation delete-stack --stack-name myStack1 --region us-east-1
+              --region us-east-1           
+         
 
   create_cloudfront:
     docker:
