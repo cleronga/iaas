@@ -53,7 +53,7 @@ jobs:
             aws cloudformation deploy \
               --template-file cloudfront.yml \
               --stack-name production-distro \
-              --parameter-overrides PipelineID="ubacket64" \  # Name of the S3 bucket you created manually.
+              --parameter-overrides PipelineID="ubacket64" \ 
               --tags project=udapeople &  
         
      
