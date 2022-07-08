@@ -36,7 +36,7 @@ jobs:
           command: |
             aws cloudformation deploy \
               --template-file template.yml \
-              --stack-name myStack-${CIRCLE_WORKFLOW_ID:0:5} \
+              --stack-name myStack \
               --region us-east-1
   # Exercise: Config and Deployment
   configure_infrastructure:
@@ -86,9 +86,9 @@ workflows:
       #- myjob1
       #- create_infrastructure
       #- configure_infrastructure
-      #- create_infrastructure
-      - smoke_test1
-      #- smoke_test1:
-      #    requires: 
-      #       - create_infrastructure
+      - create_infrastructure
+      #- smoke_test1
+      - smoke_test1:
+          requires: 
+             - create_infrastructure
 
