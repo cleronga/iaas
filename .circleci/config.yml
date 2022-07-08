@@ -52,7 +52,7 @@ jobs:
               --template-file cloudfront.yml \
               --stack-name production-distro \
               --parameter-overrides PipelineID="ubacket64" \ 
-              --tags project=udapeople &  
+              
         
      
   # Exercise: Config and Deployment
