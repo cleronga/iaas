@@ -74,7 +74,7 @@ jobs:
       - run:
          name: Test job
          # Fail the job intentionally to simulate an error .
-         command: 
+         command: return 0
       - destroy_environment
       
            
