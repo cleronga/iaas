@@ -30,11 +30,11 @@ jobs:
   # Exercise: Config and Deployment
   configure_infrastructure:
     docker:
-      - image: amazon/aws-cli
+      - image: python:3.7-alpine3.11
     steps:
       - checkout
       - add_ssh_keys:
-              fingerprints:["26:5e:e9:e3:64:43:a9:ae:69:a1:8f:40:ae:06:e9:32"]
+              fingerprints: ["26:5e:e9:e3:64:43:a9:ae:69:a1:8f:40:ae:06:e9:32"]
       - run:
           name: Install Ansible
           command: apk add --update ansible
