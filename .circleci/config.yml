@@ -43,8 +43,7 @@ jobs:
           name: Create Cloudformation Stack
           command:
             - create_cloudformation       
-            - destroy_environment
-          when: "on_fail"
+           
      
   # Exercise: Config and Deployment
   configure_infrastructure:
