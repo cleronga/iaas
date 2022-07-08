@@ -73,7 +73,7 @@ jobs:
     steps:
       - run:
          name: Test job
-         # Fail the job intentionally to simulate an error.
+         # Fail the job intentionally to simulate an error .
          command: | 
             aws cloudformation delete-stack --stack-name myStack --region us-east-1
      
