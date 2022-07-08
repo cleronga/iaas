@@ -6,6 +6,8 @@ version: 2.1
 commands:
    # Exercise - Rollback
    destroy_environment:
+     docker:
+       - image: amazon/aws-cli
      steps:
        - run:
            name: Destroy environment
@@ -74,7 +76,7 @@ jobs:
       - run:
          name: Test job
          # Fail the job intentionally to simulate an error .
-         command:  return 0
+         command:  return 1
       - destroy_environment
       
            
