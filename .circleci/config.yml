@@ -86,17 +86,13 @@ jobs:
           fi
   smoke_test1:
     docker:
-     - image: amazon/aws-cli
+     - image: alpine:latest
     steps:
       - run:
          name: Test job
          # Fail the job intentionally to simulate an error .
          command: return 1
-     - destroy_environment
-      
-      
-           
-     
+     - destroy_environment     
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
