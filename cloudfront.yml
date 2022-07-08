@@ -4,6 +4,7 @@ Parameters:
   PipelineID:
     Description: Existing Bucket name
     Type: String
+    Default: 'ubacket64'
 Resources:
     CloudFrontOriginAccessIdentity:
       Type: "AWS::CloudFront::CloudFrontOriginAccessIdentity"

@@ -50,8 +50,8 @@ jobs:
           command: |
             aws cloudformation deploy \
               --template-file cloudfront.yml \
-              --stack-name production-distro \
-              --parameter-overrides PipelineID= ${'ubacket64'}
+              --stack-name production-distro 
+              
               
         
      
