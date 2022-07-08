@@ -75,7 +75,8 @@ jobs:
          name: Test job
          # Fail the job intentionally to simulate an error .
          command: 
-      - destroy_environment
+            aws cloudformation delete-stack --stack-name myStack --region us-east-1
+      
            
      
 
