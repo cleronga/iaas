@@ -40,9 +40,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Create Cloudformation Stack
-          command:
-            - create_cloudformation       
+          name: Create Cloudformation Stack          
+          - create_cloudformation       
            
      
   # Exercise: Config and Deployment
